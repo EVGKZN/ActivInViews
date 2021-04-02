@@ -1,0 +1,6 @@
+framework module Pods_ActivInViews {
+  umbrella header "Pods-ActivInViews-umbrella.h"
+
+  export *
+  module * { export * }
+}
