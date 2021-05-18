@@ -1,48 +1,28 @@
 //
-//  UITextField+Extensions.swift
+//  UITextView+Extensions.swift
 //  ActivInViews
 //
-//  Created by Евгений Кузьмин on 09.05.2021.
+//  Created by Евгений Кузьмин on 18.05.2021.
 //
 
 import UIKit
 
-extension UITextField {
+extension UITextView {
 
-    public func addActivityIndicator(style: ActivityIndicatorViewStyle, location: TextFieldActivityIndicatorViewLocation) {
+    public func addActivityIndicator(style: ActivityIndicatorViewStyle, location: TextViewActivityIndicatorViewLocation) {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.configure(with: style)
         addActivityIndicator(activityIndicator, isStyledAfter: true)
         setupActivityIndicatorLocation(location: location)
     }
 
-    private func setupActivityIndicatorLocation(location: TextFieldActivityIndicatorViewLocation) {
+    private func setupActivityIndicatorLocation(location: TextViewActivityIndicatorViewLocation) {
         guard let activityIndicator = getActivityIndicator() else { return }
         switch location {
-        case .leftView:
-            activityIndicator.removeFromSuperview()
-            leftViewMode = .always
-            leftView = activityIndicator
         case .centerWithoutText:
             activityIndicator.snp.makeConstraints { make in
                 make.center.equalToSuperview()
             }
-        case .rightView:
-            activityIndicator.removeFromSuperview()
-            rightViewMode = .always
-            rightView = activityIndicator
-        }
-    }
-
-    public override func getActivityIndicator() -> UIActivityIndicatorView? {
-        if let activityIndicator = self.subviews.first(where: { $0 is UIActivityIndicatorView }) as? UIActivityIndicatorView {
-            return activityIndicator
-        } else if let activityIndicator = leftView as? UIActivityIndicatorView {
-            return activityIndicator
-        } else if let activityIndicator = rightView as? UIActivityIndicatorView {
-            return activityIndicator
-        } else {
-            return nil
         }
     }
 

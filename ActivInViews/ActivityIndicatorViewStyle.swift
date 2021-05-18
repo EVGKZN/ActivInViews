@@ -24,6 +24,10 @@ public enum TextFieldActivityIndicatorViewLocation {
     case centerWithoutText
 }
 
+public enum TextViewActivityIndicatorViewLocation {
+    case centerWithoutText
+}
+
 public struct ActivityIndicatorViewStyle {
     var color: UIColor
     var size: UIActivityIndicatorView.Style
