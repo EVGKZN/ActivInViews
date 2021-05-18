@@ -26,6 +26,31 @@ extension UIView {
         setupActivityIndicatorLocation(location: location)
     }
 
+    public func showCustomActivityIndicator(type: CustomActivityIndicatorType) {
+        guard searchForCustomActivityIndicatorView() == nil else { return }
+        switch type {
+        case .spinningCircle:
+            let customActivityIndicatorView = SpinningCircledLine()
+            addSubview(customActivityIndicatorView)
+            customActivityIndicatorView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+            }
+            customActivityIndicatorView.animate()
+        }
+    }
+
+    public func hideCustomActivityIndicator() {
+        guard let customActivityIndicator = searchForCustomActivityIndicatorView() else { return }
+        customActivityIndicator.removeFromSuperview()
+    }
+
+    private func searchForCustomActivityIndicatorView() -> UIView? {
+        guard let customActivityIndicatorView = subviews.first(where: { $0 is SpinningCircledLine }) else {
+            return nil
+        }
+        return customActivityIndicatorView
+    }
+
     public func removeActivityIndicator() {
         if let activityIndicator = getActivityIndicator() {
             activityIndicator.removeFromSuperview()

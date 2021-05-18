@@ -28,6 +28,10 @@ public enum TextViewActivityIndicatorViewLocation {
     case centerWithoutText
 }
 
+public enum CustomActivityIndicatorType {
+    case spinningCircle
+}
+
 public struct ActivityIndicatorViewStyle {
     var color: UIColor
     var size: UIActivityIndicatorView.Style
