@@ -12,7 +12,7 @@ extension UITextView {
     public func addActivityIndicator(style: ActivityIndicatorViewStyle, location: TextViewActivityIndicatorViewLocation) {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.configure(with: style)
-        addActivityIndicator(activityIndicator, isStyledAfter: true)
+        addActivityIndicator(activityIndicator: activityIndicator, isStyledAfter: true)
         setupActivityIndicatorLocation(location: location)
     }
 

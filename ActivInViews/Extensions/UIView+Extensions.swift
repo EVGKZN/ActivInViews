@@ -10,7 +10,7 @@ import SnapKit
 
 extension UIView {
 
-    public func addActivityIndicator(_ activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(), isStyledAfter: Bool = false) {
+    public func addActivityIndicator(activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(), isStyledAfter: Bool = false) {
         self.addSubview(activityIndicator)
         if !isStyledAfter {
             activityIndicator.snp.makeConstraints { make in
@@ -21,7 +21,7 @@ extension UIView {
 
     public func addActivityIndicator(style: ActivityIndicatorViewStyle = ActivityIndicatorViewStyle(), location: ActivityIndicatorViewLocation = .center) {
         let activityIndicator = UIActivityIndicatorView()
-        addActivityIndicator(activityIndicator, isStyledAfter: true)
+        addActivityIndicator(activityIndicator: activityIndicator, isStyledAfter: true)
         activityIndicator.configure(with: style)
         setupActivityIndicatorLocation(location: location)
     }
@@ -36,7 +36,7 @@ extension UIView {
         if let activityIndicator = getActivityIndicator() {
             activityIndicator.startAnimating()
         } else {
-            self.addActivityIndicator(UIActivityIndicatorView())
+            self.addActivityIndicator(activityIndicator: UIActivityIndicatorView())
             showActivityIndicator()
         }
     }

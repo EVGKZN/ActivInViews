@@ -12,7 +12,7 @@ extension UIButton {
     public func addActivityIndicator(style: ActivityIndicatorViewStyle, location: ButtonActivityIndicatorViewLocation) {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.configure(with: style)
-        addActivityIndicator(activityIndicator, isStyledAfter: true)
+        addActivityIndicator(activityIndicator: activityIndicator, isStyledAfter: true)
         setupActivityIndicatorLocation(location: location)
     }
 

@@ -12,7 +12,7 @@ extension UITextField {
     public func addActivityIndicator(style: ActivityIndicatorViewStyle, location: TextFieldActivityIndicatorViewLocation) {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.configure(with: style)
-        addActivityIndicator(activityIndicator, isStyledAfter: true)
+        addActivityIndicator(activityIndicator: activityIndicator, isStyledAfter: true)
         setupActivityIndicatorLocation(location: location)
     }
 

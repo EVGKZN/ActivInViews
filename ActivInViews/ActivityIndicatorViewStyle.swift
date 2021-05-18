@@ -35,8 +35,7 @@ public struct ActivityIndicatorViewStyle {
 
     public init(color: UIColor = .gray,
                 size: UIActivityIndicatorView.Style = .gray,
-                hidesWhenStopped: Bool = true,
-                location: ActivityIndicatorViewLocation = .center) {
+                hidesWhenStopped: Bool = true) {
         self.color = color
         self.size = size
         self.hidesWhenStopped = hidesWhenStopped
